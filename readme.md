@@ -68,7 +68,6 @@ $table_data = [
 $form = $form->render();
 ```
 >the above step will generate an html code
->
 
 ### Example form
 ```php
@@ -84,7 +83,6 @@ $form = $form ->render();
 \BewarHizirvan\LaravelForm\LaravelForm::redirect($route = '/');
 ```
 >The above function will check the $request for back_url, if it is set it will redirect to it else it will redirect to the provided route
->
 
 ## Change log
 
