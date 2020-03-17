@@ -12,7 +12,7 @@ This is where your description should go. Take a look at [contributing.md](contr
 Via Composer
 
 ``` bash
-$ composer require bewarhizirvan/laravelform
+$ composer require bewarhizirvan/laravel-form
 ```
 
 ## Usage
@@ -44,14 +44,14 @@ If you discover any security related issues, please email bewar@hizirvan.email i
 
 MIT. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/bewarhizirvan/laravelform.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/bewarhizirvan/laravelform.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/bewarhizirvan/laravelform/master.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/bewarhizirvan/laravel-form.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/bewarhizirvan/laravel-form.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/bewarhizirvan/laravel-form/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
-[link-packagist]: https://packagist.org/packages/bewarhizirvan/laravelform
-[link-downloads]: https://packagist.org/packages/bewarhizirvan/laravelform
-[link-travis]: https://travis-ci.org/bewarhizirvan/laravelform
+[link-packagist]: https://packagist.org/packages/bewarhizirvan/laravel-form
+[link-downloads]: https://packagist.org/packages/bewarhizirvan/laravel-form
+[link-travis]: https://travis-ci.org/bewarhizirvan/laravel-form
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/bewarhizirvan
 [link-contributors]: ../../contributors
