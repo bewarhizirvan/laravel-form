@@ -32,6 +32,7 @@ class LaravelFormServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/laravelform.php', 'laravelform');
+        $this->loadViewsFrom(__DIR__.'/views', 'laravelform');
 
         // Register the service the package provides.
         $this->app->singleton('laravelform', function ($app) {
@@ -48,7 +49,7 @@ class LaravelFormServiceProvider extends ServiceProvider
     {
         return ['laravelform'];
     }
-    
+
     /**
      * Console-specific booting.
      *
