@@ -70,7 +70,7 @@ $form = $form->render();
 >the above step will generate an html code
 >
 
-###Example form
+### Example form
 ```php
 $form = new \BewarHizirvan\LaravelForm\LaravelForm($parameters);
 $form->addText('email');
