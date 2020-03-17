@@ -71,6 +71,19 @@
                     </div>
                 </div>
 @break
+@case('radioGroup')
+                <div{!! $row['div_attr'] !!}>
+                    <label{!! $row['label_attr'] !!}>{!! $row['label'] !!}</label>
+                    <div class="{{$row['div_div_class']}}">
+@foreach($row['inputs'] as $input)
+                        <div class="custom-control custom-radio mb-3">
+                            <input{!! $input['input_attr'] !!}>
+                            <label class="custom-control-label" for="{!! $input['label_for'] !!}"><span>{!! $input['label'] !!}</span></label>
+                        </div>
+@endforeach
+                    </div>
+                </div>
+@break
 @case('file')
                 <div{!! $row['div_attr'] !!}>
                     <label{!! $row['label_attr'] !!}>{!! $row['label'] !!}</label>

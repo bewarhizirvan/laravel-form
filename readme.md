@@ -24,7 +24,7 @@ $form = new \BewarHizirvan\LaravelForm\LaravelForm($parameters);
 $parameters must be an array and is optional, all keys are optional
 >title  : Form Title  
 >name	: Form name  
->method	: Form method { get, post, put, patch }
+>method	: Form method { get, post (default), put, patch }
 >class	: Form class  
 >role	: Form role  
 >dir    : Form direction { right, left (default) }  
@@ -33,7 +33,7 @@ $parameters must be an array and is optional, all keys are optional
 >submit	: Form submit button title, if you set it to 'none' it will be removed  
 >back_url	: Form Back button URL, if you set it to 'none' it will be removed
 >
-For form action One of these you can use  
+For form action One of these you can use {default is ''}  
 >url	: Full URL  
 >route	: Route { only route string or array Laravel Style }  
 >action	: Action { only action string or array Laravel Style }
@@ -41,16 +41,28 @@ For form action One of these you can use
 
 ###Functions
 ```php
-$form->addText($input_name = null, $input_value = '', $input_par = [], $label = null, $label_par = [], $div_par = [])  
-$form->addFile($input_name = null, $input_value = '', $input_par = [], $label = null, $label_par = [], $div_par = [])  
-$form->addButton($label = '', $input_par = [])  
-$form->addHidden($input_name = null, $input_value = '', $input_par = [])  
-$form->addSelect($select_name= null, $select_options = [], $select_value='',$select_par = [],$label=null, $label_par = [], $div_par = [])  
-$form->addTextArea($input_name = null, $input_value = '', $input_par = [], $label = null, $label_par = [], $div_par = [])  
-$form->addCheckbox($input_name = null, $input_value = 1, $checked = false, $input_par = [], $label = null, $label_par = [], $div_par = [])  
-$form->addCheckboxGroup($input_name = null, $checkboxes = [], $checked_list = [], $input_par = [], $label = null, $label_par = [], $div_par = [])  
-$form->addTable($label = '', $table_data = [], $label_par = [], $table_par = [], $thead_par = [], $tbody_par = [], $tfoot_par = [], $div_par = [])
+$form->addText($name = null, $value = '', $attributes = [], $label = null, $label_attributes = [], $div_attributes = [])  
+$form->addFile($name = null, $value = '', $attributes = [], $label = null, $label_attributes = [], $div_attributes = [])  
+$form->addButton($label = '', $attributes = [])  
+$form->addHidden($name = null, $value = '', $attributes = [])  
+$form->addSelect($name= null, $options = [], $value='',$attributes = [],$label=null, $label_attributes = [], $div_attributes = [])  
+$form->addTextArea($name = null, $value = '', $attributes = [], $label = null, $label_attributes = [], $div_attributes = [])  
+$form->addCheckbox($name = null, $value = 1, $checked = false, $attributes = [], $label = null, $label_attributes = [], $div_attributes = [])  
+$form->addCheckboxGroup($name = null, $checkboxes = [], $checked_list = [], $attributes = [], $label = null, $label_attributes = [], $div_attributes = [])  
+$form->addRadioGroup($name = null, $radios = [], $checked = '', $attributes = [], $label = null, $label_attributes = [], $div_attributes = [])  
+$form->addTable($label = '', $table_data = [], $label_attributes = [], $table_attributes = [], $thead_attributes = [], $tbody_attributes = [], $tfoot_attributes = [], $div_attributes = [])
 ```
+>For all function if $label = null, the the function will set $label = trans("db.$name")
+# For addTable function $table_data will be
+```php
+$table_data = [
+'names' => [],
+'inputs' => [],
+'sums' => [],
+'buttons' => [],
+];
+```
+
 ### When finished do bellow
 ```php
 $form = $form->render();
@@ -67,6 +79,11 @@ $form->addText('password', '', ['type' => 'password']);
 $form = $form ->render();
 ```
 
+### Static Function
+```php
+\BewarHizirvan\LaravelForm\LaravelForm::redirect($route = '/');
+```
+>The above function will check the $request for back_url, if it is set it will redirect to it else it will redirect to the provided route
 
 
 ## Change log

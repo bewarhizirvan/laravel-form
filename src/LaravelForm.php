@@ -327,6 +327,45 @@ class LaravelForm
         ];
     }
 
+    public function addRadioGroup($input_name= null, $radios=[], $checked = '', $input_par = [], $label = null, $label_par = [], $div_par = [])
+    {
+        if(!isset($input_par['class'])) $input_par['class'] = 'form-control form-radio';
+        if(!isset($input_par['id'])) $input_par['id'] = $input_name;
+        if(!isset($input_par['type'])) $input_par['type'] = 'radio';
+        $input_par['name'] = $input_name;
+        $inputs = [];
+        foreach($radios as $radio)
+        {
+            $attr = $input_par;
+            $attr['class'] = 'custom-control-input';
+            $attr['id'] = $input_name.'_'.$radio['id'];
+            $attr['value'] = $radio['id'];
+            if($radio['id'] == $checked) $attr['checked'] = 'checked';
+            $inputs[] = [
+                'label' => $radio['name'],
+                'label_for' => $attr['id'],
+                'input_attr' => Self::Attributes($attr)
+            ];
+        }
+        $label = is_null($label)?trans('db.'.$input_name):$label;
+        if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
+        $label_par['for'] = $input_par['id'];
+        $label_attr = Self::Attributes($label_par);
+
+        if(!isset($div_par['class'])) $div_par['class'] = 'form-group row';
+        $div_attr = Self::Attributes($div_par);
+        $div_div_class = 'col-md-10';
+        $this->rows[] = [
+            'type' => 'radioGroup',
+            'div_attr' => $div_attr,
+            'label_attr' => $label_attr,
+            'label' => $label,
+            'div_div_class' => $div_div_class,
+            'inputs' => $inputs,
+        ];
+
+    }
+
     public function addTable($label = '', $table_data = [], $label_par = [], $table_par = [], $thead_par = [], $tbody_par = [], $tfoot_par = [], $div_par = [])
     {
         if(!isset($table_data['inputs'])) $table_data['inputs'] = [];
