@@ -1,4 +1,4 @@
-    <div class="card">
+    <div class="card" dir="{{ ($form['dir'] == "left")?"ltr":"rtl" }}">
         <!-- Form Card header -->
         <div class="card-header">
             <div class="row">
@@ -13,7 +13,7 @@
         <div class="card-body">
             <form name="{{ $form['name'] }}" method="{{ $form['method'] }}" action="{{ $form['action'] }}" accept-charset="UTF-8" class="{{ $form['class'] }}" role="{{ $form['role'] }}" id="{{ $form['id'] }}" {{ $form['file'] }}>
 @if(isset($form['back_url']) && $form['back_url'] != null)
-                <div class="form-group row" style="text-align: left">
+                <div class="form-group row" style="text-align: {{ $form['dir'] }}">
                     <div class="col-md-10">
                         <a href="{{$form['back_url']}}" class="btn btn-primary">{{trans('db.back')}}</a>
                     </div>

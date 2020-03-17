@@ -19,15 +19,16 @@ $ composer require bewarhizirvan/laravel-form
 
 For initiating new form
 ``` php
-$form = new \App\Form($parameters);
+$form = new \BewarHizirvan\LaravelForm\LaravelForm($parameters);
 ```
-$parameters must be an array, all keys are optional
+$parameters must be an array and is optional, all keys are optional
 >title  : Form Title  
 >name	: Form name  
 >method	: Form method { get, post, put, patch }
 >class	: Form class  
 >role	: Form role 
->id	: Form id  
+>dir    : Form direction { right, left (default) }  
+>id     : Form id  
 >file	: if you set a value to it , the Form will have enctype="multipart/form-data"  
 >submit	: Form submit button title, if you set it to 'none' it will be removed  
 >back_url	: Form Back button URL, if you set it to 'none' it will be removed
@@ -37,6 +38,36 @@ For form action One of these you can use
 >route	: Route { only route string or array Laravel Style }  
 >action	: Action { only action string or array Laravel Style }
 >
+
+###Functions
+```php
+$form->addText($input_name = null, $input_value = '', $input_par = [], $label = null, $label_par = [], $div_par = [])  
+$form->addFile($input_name = null, $input_value = '', $input_par = [], $label = null, $label_par = [], $div_par = [])  
+$form->addButton($label = '', $input_par = [])  
+$form->addHidden($input_name = null, $input_value = '', $input_par = [])  
+$form->addSelect($select_name= null, $select_options = [], $select_value='',$select_par = [],$label=null, $label_par = [], $div_par = [])  
+$form->addTextArea($input_name = null, $input_value = '', $input_par = [], $label = null, $label_par = [], $div_par = [])  
+$form->addCheckbox($input_name = null, $input_value = 1, $checked = false, $input_par = [], $label = null, $label_par = [], $div_par = [])  
+$form->addCheckboxGroup($input_name = null, $checkboxes = [], $checked_list = [], $input_par = [], $label = null, $label_par = [], $div_par = [])  
+$form->addTable($label = '', $table_data = [], $label_par = [], $table_par = [], $thead_par = [], $tbody_par = [], $tfoot_par = [], $div_par = [])
+```
+### When finished do bellow
+```php
+$form = $form->render();
+```
+>the above step will generate an html code
+
+
+###Example form
+```php
+$form = new \BewarHizirvan\LaravelForm\LaravelForm($parameters);
+$form->addText('email');
+$form->addText('name');
+$form->addText('password', '', ['type' => 'password']);
+$form = $form ->render();
+```
+
+
 
 ## Change log
 

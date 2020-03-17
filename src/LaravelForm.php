@@ -13,6 +13,7 @@ class LaravelForm
     protected $form_class = '';
     protected $form_role = '';
     protected $form_id = '';
+    protected $form_dir = 'left';
     protected $form_hasFile = '';
     protected $submit = 'Submit';
     protected $back_url = null;
@@ -39,6 +40,7 @@ class LaravelForm
         if(isset($parameters['class'])) $this->form_class = $parameters['class'];
         if(isset($parameters['role'])) $this->form_role = $parameters['role'];
         if(isset($parameters['id'])) $this->form_id = $parameters['id'];
+        if(isset($parameters['dir'])) $this->form_dir = $parameters['dir'];
         if(isset($parameters['file'])) $this->form_hasFile = 'enctype="multipart/form-data"';
         if(isset($parameters['submit']))
         {
@@ -391,6 +393,7 @@ class LaravelForm
             'class' => $this->form_class,
             'role' => $this->form_role,
             'id' => $this->form_id,
+            'dir' => $this->form_dir,
             'file' => $this->form_hasFile,
             'back_url' => $this->back_url,
             'submit' => $this->submit,
