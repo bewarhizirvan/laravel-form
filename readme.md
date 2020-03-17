@@ -39,7 +39,7 @@ For form action One of these you can use {default is ''}
 >action	: Action { only action string or array Laravel Style }
 >
 
-###Functions
+### Functions
 ```php
 $form->addText($name = null, $value = '', $attributes = [], $label = null, $label_attributes = [], $div_attributes = [])  
 $form->addFile($name = null, $value = '', $attributes = [], $label = null, $label_attributes = [], $div_attributes = [])  
