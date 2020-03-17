@@ -26,7 +26,7 @@ $parameters must be an array and is optional, all keys are optional
 >name	: Form name  
 >method	: Form method { get, post, put, patch }
 >class	: Form class  
->role	: Form role 
+>role	: Form role  
 >dir    : Form direction { right, left (default) }  
 >id     : Form id  
 >file	: if you set a value to it , the Form will have enctype="multipart/form-data"  
