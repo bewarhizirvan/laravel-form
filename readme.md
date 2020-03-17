@@ -17,6 +17,27 @@ $ composer require bewarhizirvan/laravel-form
 
 ## Usage
 
+For initiating new form
+``` php
+$form = new \App\Form($parameters);
+```
+$parameters must be an array, all keys are optional
+>title  : Form Title  
+>name	: Form name  
+>method	: Form method { get, post, put, patch }
+>class	: Form class  
+>role	: Form role 
+>id	: Form id  
+>file	: if you set a value to it , the Form will have enctype="multipart/form-data"  
+>submit	: Form submit button title, if you set it to 'none' it will be removed  
+>back_url	: Form Back button URL, if you set it to 'none' it will be removed
+>
+For form action One of these you can use  
+>url	: Full URL  
+>route	: Route { only route string or array Laravel Style }  
+>action	: Action { only action string or array Laravel Style }
+>
+
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
