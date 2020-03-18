@@ -98,10 +98,6 @@ $ composer test
 
 Please see [contributing.md](contributing.md) for details and a todolist.
 
-## Security
-
-If you discover any security related issues, please email bewar@hizirvan.email instead of using the issue tracker.
-
 ## Credits
 
 - [Bewar Hizirvan][link-author]
