@@ -11,7 +11,7 @@
         </div>
         <!-- Form Card body -->
         <div class="card-body">
-            <form name="{{ $form['name'] }}" method="{{ $form['method'] }}" action="{{ $form['action'] }}" accept-charset="UTF-8" class="{{ $form['class'] }}" role="{{ $form['role'] }}" id="{{ $form['id'] }}" {{ $form['file'] }}>
+            <form name="{{ $form['name'] }}" method="{{ $form['method'] }}" action="{{ $form['action'] }}" accept-charset="UTF-8" class="{{ $form['class'] }}" role="{{ $form['role'] }}" id="{{ $form['id'] }}" @isset($form['file']) enctype="multipart/form-data" @endisset }}>
 @if(isset($form['back_url']) && $form['back_url'] != null)
                 <div class="form-group row" style="text-align: {{ ($form['dir'] == "left")?"right":"left" }}">
                     <div class="col-md-10">
