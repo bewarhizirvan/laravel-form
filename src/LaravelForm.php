@@ -14,7 +14,7 @@ class LaravelForm
     protected $form_role = '';
     protected $form_id = '';
     protected $form_dir = 'left';
-    protected $form_hasFile = '';
+    protected $form_hasFile = null;
     protected $submit = 'Submit';
     protected $back_url = null;
     protected $rows = [];
