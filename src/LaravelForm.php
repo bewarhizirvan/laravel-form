@@ -5,6 +5,7 @@ namespace BewarHizirvan\LaravelForm;
 class LaravelForm
 {
     // Build wonderful things
+    protected $card_class = '';
     protected $form_title = '';
     protected $form_name = '';
     protected $form_method = 'POST';
@@ -38,6 +39,7 @@ class LaravelForm
         }
         $this->form_action = Self::getAction($parameters);
         if(isset($parameters['class'])) $this->form_class = $parameters['class'];
+        if(isset($parameters['card_class'])) $this->card_class = $parameters['card_class'];
         if(isset($parameters['role'])) $this->form_role = $parameters['role'];
         if(isset($parameters['id'])) $this->form_id = $parameters['id'];
         if(isset($parameters['dir'])) $this->form_dir = $parameters['dir'];
@@ -430,6 +432,7 @@ class LaravelForm
             'put_patch' => $this->form_method_put_patch,
             'action' => $this->form_action,
             'class' => $this->form_class,
+            'card_class' => $this->card_class,
             'role' => $this->form_role,
             'id' => $this->form_id,
             'dir' => $this->form_dir,

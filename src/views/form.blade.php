@@ -1,4 +1,4 @@
-    <div class="card" dir="{{ ($form['dir'] == "left")?"ltr":"rtl" }}" style="text-align: {{ $form['dir'] }}">
+    <div class="card {{ $form['card_class'] }}" dir="{{ ($form['dir'] == "left")?"ltr":"rtl" }}" style="text-align: {{ $form['dir'] }}">
         <!-- Form Card header -->
         <div class="card-header">
             <div class="row">
@@ -154,7 +154,10 @@
 @if(isset($form['put_patch']))
                 <input name="_method" type="hidden" value="{{$form['put_patch']}}">
 @endif
-                <input name="back_url" type="hidden" value="{{ url()->previous() }}"><br />
+@if(isset($form['back_url']))
+                <input name="back_url" type="hidden" value="{{ $form['back_url'] }}"><br />
+@endif
+
 @if( $form['submit'] != null )
                     <button class="btn btn-primary btn-lg btn-block" type="submit" id="formSubmit">{{ $form['submit'] }}</button>
 @endif
