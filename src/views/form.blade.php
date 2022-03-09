@@ -170,6 +170,15 @@
                     <button class="btn btn-primary btn-lg btn-block" type="submit" id="formSubmit">{{ $form['submit'] }}</button>
 @endif
                 @csrf
+@if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+@endif
 
             </form>
         </div>
