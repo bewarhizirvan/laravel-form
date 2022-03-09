@@ -92,6 +92,14 @@
                     </div>
                 </div>
 @break
+@case('html')
+                <div{!! $row['div_attr'] !!}>
+                    <label{!! $row['label_attr'] !!}>{!! $row['label'] !!}</label>
+                    <div class="{{$row['div_div_class']}}">
+                        {!! $row['html'] !!}
+                    </div>
+                </div>
+@break
 @case('select')
                 <div{!! $row['div_attr'] !!}>
                     <label{!! $row['label_attr'] !!}>{!! $row['label'] !!}</label>
