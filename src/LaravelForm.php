@@ -419,6 +419,22 @@ class LaravelForm
         ];
     }
 
+    public function addHtml($html = '', $label = null, $label_par = [], $div_par = [])
+    {
+        if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
+        $label_attr = Self::Attributes($label_par);
+        if(!isset($div_par['class'])) $div_par['class'] = 'form-group row';
+        $div_attr = Self::Attributes($div_par);
+        $div_div_class = 'col-md-10';
+        $this->rows[] = [
+            'type' => 'html',
+            'div_attr' => $div_attr,
+            'label_attr' => $label_attr,
+            'label' => $label,
+            'div_div_class' => $div_div_class,
+            'html' => $html
+        ];
+    }
 
 
 
