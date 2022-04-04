@@ -54,7 +54,8 @@ class LaravelForm
             if($parameters['back_url'] == 'none') $this->back_url = null;
             elseif(\URL::current() == \URL::previous()) $this->back_url = route($parameters['back_url']);
             else $this->back_url = \URL::previous();
-        }
+        }else $this->back_url = \URL::previous();
+
     }
 
     protected static function Attributes($attributes)
