@@ -42,9 +42,9 @@
 @break
 @case('checkbox')
                  <div{!! $row['div_attr'] !!}>
-                     <label{!! $row['label_attr'] !!}>{!! $row['label'] !!}</label>
                      <div class="{{$row['div_div_class']}}">
-                         <input{!! $row['input_attr'] !!}>
+                        <input{!! $row['input_attr'] !!}>
+                        <label{!! $row['label_attr'] !!}>{!! $row['label'] !!}</label>
                      </div>
                  </div>
 @break
