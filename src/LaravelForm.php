@@ -130,7 +130,7 @@ class LaravelForm
         $input_par['value'] = $input_value;
         $input_attr = Self::Attributes($input_par);
 
-        $label = is_null($label)?trans('db.'.$input_name):$label;
+        $label = is_null($label)?__($input_name):$label;
         if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
         $label_par['for'] = $input_par['id'];
         $label_attr = Self::Attributes($label_par);
@@ -157,7 +157,7 @@ class LaravelForm
         $input_par['value'] = $input_value;
         $input_attr = Self::Attributes($input_par);
 
-        $label = is_null($label)?trans('db.'.$input_name):$label;
+        $label = is_null($label)?__($input_name):$label;
         if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
         $label_par['for'] = $input_par['id'];
         $label_attr = Self::Attributes($label_par);
@@ -216,7 +216,7 @@ class LaravelForm
         $input_par['name'] = $input_name;
         $input_attr = Self::Attributes($input_par);
 
-        $label = is_null($label)?trans('db.'.$input_name):$label;
+        $label = is_null($label)?__($input_name):$label;
         if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
         $label_par['for'] = $input_par['id'];
         $label_attr = Self::Attributes($label_par);
@@ -245,7 +245,7 @@ class LaravelForm
         if($checked) $input_par['checked'] = 'checked';
         $input_attr = Self::Attributes($input_par);
 
-        $label = is_null($label)?trans('db.'.$input_name):$label;
+        $label = is_null($label)?__($input_name):$label;
         if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
         $label_par['for'] = $input_par['id'];
         $label_attr = Self::Attributes($label_par);
@@ -271,7 +271,7 @@ class LaravelForm
         $select_par['name'] = $select_name;
         $input_attr = Self::Attributes($select_par);
 
-        $label = is_null($label)?trans('db.'.$select_name):$label;
+        $label = is_null($label)?__($select_name):$label;
         if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
         $label_par['for'] = $select_par['id'];
         $label_attr = Self::Attributes($label_par);
@@ -312,7 +312,7 @@ class LaravelForm
                 'input_attr' => Self::Attributes($check)
             ];
         }
-        $label = is_null($label)?trans('db.'.$input_name):$label;
+        $label = is_null($label)?__($input_name):$label;
         if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
         $label_par['for'] = $input_par['id'];
         $label_attr = Self::Attributes($label_par);
@@ -350,7 +350,7 @@ class LaravelForm
                 'input_attr' => Self::Attributes($attr)
             ];
         }
-        $label = is_null($label)?trans('db.'.$input_name):$label;
+        $label = is_null($label)?__($input_name):$label;
         if(!isset($label_par['class'])) $label_par['class'] = 'col-md-2 col-form-label form-control-label';
         $label_par['for'] = $input_par['id'];
         $label_attr = Self::Attributes($label_par);
