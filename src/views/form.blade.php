@@ -15,7 +15,7 @@
 @if(isset($form['back_url']) && $form['back_url'] != null)
                 <div class="form-group row" style="text-align: {{ ($form['dir'] == "left")?"right":"left" }}">
                     <div class="col-md-10">
-                        <a href="{{$form['back_url']}}" class="btn btn-primary">{{trans('db.back')}}</a>
+                        <a href="{{$form['back_url']}}" class="btn btn-primary">{{__('Back')}}</a>
                     </div>
                 </div>
 @endif
