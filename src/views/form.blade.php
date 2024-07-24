@@ -131,7 +131,9 @@
                             <tbody{!! $row['tbody_attr'] !!}>
                             <tr>
 @foreach($row['table_data']['inputs'] as $input)
-@if(strrpos($input, 'hidden') === false)
+@if(strrpos($input, 'select') !== false)
+                                <td><select{!! $input !!}></select></td>
+@elseif(strrpos($input, 'hidden') === false)
                                 <td><input{!! $input !!}></td>
 @else
                                 <input{!! $input !!}>
